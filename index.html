@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Detektive</title>
+		<link rel="stylesheet" href="/index.css" />
+		<script src="/index.js" defer></script>
+	</head>
+	<body>
+		<section class="main-screen">
+			<div class="main-screen-title-container">
+				<h1 class="main-screen-title">
+					Die kleinen<br />
+					Detektive<br />
+					suchen Diebe!
+				</h1>
+			</div>
+			<div class="main-screen-image">
+				<img src="images/main-small.png" />
+			</div>
+		</section>
+		<section class="slide slide-1">
+			<div class="grid">
+				<div class="grid-content">
+					<h1 class="grid-text">
+						Die Diebe sind in den Zug eingestiegen. Die kleinen Detective warten auf dem Bahnsteig auf Euch.
+						Sie brauchen eure Hilfe, um alle Rätsel zu lösen und die Diebe zu finden.
+					</h1>
+					<div class="grid-img">
+						<img src="/images/slide1-left.jpg" />
+					</div>
+				</div>
+				<div class="grid-content">
+					<h1 class="grid-text">
+						Die Diebe sind in den Zug eingestiegen. Die kleinen Detective warten auf dem Bahnsteig auf Euch.
+						Sie brauchen eure Hilfe, um alle Rätsel zu lösen und die Diebe zu finden.
+					</h1>
+					<div class="grid-img">
+						<canvas id="lab"></canvas>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="slide slide-2">
+			<div class="grid">
+				<div class="grid-content">
+					<h1 class="grid-text">
+						Die Zeuge haben erzählt, dass die Diebe Zwillingsbrüder sind. Seht ihr sie auf dem Bahnsteig?
+					</h1>
+					<div class="grid-img">
+						<canvas id="crowd"></canvas>
+					</div>
+				</div>
+				<div class="grid-content">
+					<h1 class="grid-text">
+						Andreas vergleicht zwei Fotos des Wagens, in den die Diebe möglicherweise gesprungen sind.
+						Seltsam! Es gibt 7 Unterschiede zwischen den beiden Fotos. Findet sie!
+					</h1>
+					<div class="grid-img">
+						<canvas id="train"></canvas>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="slide slide-3">
+			<div class="grid">
+				<div class="grid-content">
+					<h1 class="grid-text">
+						Der Kontrolleur ist überzeugt, dass er in diesem Wagen einen Dieb gesehen hat. Aber so ein Pech
+						... Der Zug ist gerade in einen Tunnel reingefahren. Helft den Detektiven die Figur des Diebs zu
+						erkennen.
+					</h1>
+					<div class="grid-img">
+						<canvas id="impostor"></canvas>
+					</div>
+				</div>
+				<div class="grid-content">
+					<h1 class="grid-text">
+						Ana und Andreas sammeln Informationen von Geschädigten wie diesem Passagier. Hier ist, was er
+						sagt. Aber alles ist so durcheinander. Bringt den Text in Ordnung! Uhr gerannt Der durch ist mit
+						meiner Dieb den Speisewagen in.
+					</h1>
+					<div class="grid-img">
+						<img src="images/image--007.jpg" />
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="slide slide-4">
+			<div class="grid">
+				<div class="grid-content">
+					<h1 class="grid-text">
+						Im Speisewagen hat Andreas den Eindruck, dass er träumt. Um seine Spuren zu löschen, hat der
+						Dieb einige völlig verrückte Hinweise hintergelassen. Findet 7 Merkwürdigkeiten!
+					</h1>
+					<div class="grid-img">
+						<canvas id="dinner"></canvas>
+					</div>
+				</div>
+				<div class="grid-content">
+					<h1 class="grid-text">
+						Aufgrund der Aussage einer Frau, die ausgeraubt worden war, haben Ana und Andreas den Koffer der
+						Diebe gefunden. Sie wissen, dass er ihnen gehört, weil sie 5 typisch weibliche Objekte darin
+						gefunden haben. Könnt ihr sie sehen?
+					</h1>
+					<div class="grid-img">
+						<canvas id="find"></canvas>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="slide slide-5">
+			<div class="grid">
+				<div class="grid-content">
+					<h1 class="grid-text">
+						Ana und Andreas haben einen Satz von Fotos, auf denen einer der Diebe einen eingeschlafenen
+						Passagier beraubt. Aber die Fotos sind gemischt. Sortiert sie!
+					</h1>
+					<div class="grid-img">
+						<canvas id="poster"></canvas>
+					</div>
+				</div>
+				<div class="grid-content">
+					<h1 class="grid-text">
+						Die Detektive haben auch eine Aktentasche mit einer Chiffre gefunden. Zum Öffnen benötigen sie
+						einen Code. Helf ihnen, ihn zu entziffern. Ihr müsst die Zahlenreihe logisch vervollständigen.
+						Die letzte Spalte ist der Geheimcode.
+					</h1>
+					<div class="grid-img">
+						<canvas id="code"></canvas>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="slide slide-6">
+			<div class="grid">
+				<div class="grid-content">
+					<h1 class="grid-text">Ana und Andreas haben viele Geldstapel in der Aktentasche gefunden.</h1>
+					<div class="grid-img">
+						<canvas id="suitcase"></canvas>
+					</div>
+				</div>
+				<div class="grid-content">
+					<h1 class="grid-text">
+						Unter den Banknoten haben die Detective einen Schlüssel für ein Schlieβfach. In welchem
+						Schlüssel passt?
+					</h1>
+					<div class="grid-img">
+						<canvas id="safe"></canvas>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="slide slide-7">
+			<div class="grid">
+				<div class="grid-content">
+					<h1 class="grid-text">
+						Die Detektive haben zwei Probleme zu lösen. Sie müssen die Nummer der Zugabteile herausfinden,
+						in denen sich die Diebe verstecken. Ana kennt die Zahlen bereits. Könnt ihr sie auch
+						herausfinden? Hier sind die Hinweise: Die zweite Ziffer entspricht der ersten plus der letzten,
+						die dritte Ziffer entspricht der ersten, die vierte Ziffer entspricht der letzten minus der
+						dritten. Sie finden die Nummer des zweiten Zugabteils, nachdem ihr 17 von der ersten Nummer
+						abzieht
+					</h1>
+					<div class="grid-img">
+						<canvas id="whiteboard"></canvas>
+					</div>
+				</div>
+				<div class="grid-content">
+					<h1 class="grid-text">
+						In einem der Zugabteile finden die Detective ein unbeschreibliches Durcheinander. Verschiedene
+						Dinge sind auf dem Bett verstreut. Sucht ein Objekt, das nicht zweimal angezeigt wird.
+					</h1>
+					<div class="grid-img">
+						<canvas id="bedroom"></canvas>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="slide slide-8">
+			<div class="grid">
+				<div class="grid-content">
+					<h1 class="grid-text">
+						Im Umschlag finden die Detective Fragmente von Fotos. Kombiniert die Fragmente so, dass ihr das
+						Gesicht eines der Diebe entdeckt. Achtung, es gibt Fragmente von einem anderen Foto.
+					</h1>
+					<div class="grid-img">
+						<canvas id="puzzle"></canvas>
+					</div>
+				</div>
+				<div class="grid-content">
+					<h1 class="grid-text">
+						Achtung, einer der Diebe rennt weg! Um ihn zu fangen, müssen Ana und Andreas von einem Wagen zum
+						anderen wechseln, aber die müssen identisch sein. Welche Wagen werden sie durchfahren?
+					</h1>
+					<div class="grid-img">
+						<canvas id="trains"></canvas>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="slide slide-9">
+			<div class="grid">
+				<div class="grid-content">
+					<h1 class="grid-text">
+						Im Umschlag finden die Detective Fragmente von Fotos. Kombiniert die Fragmente so, dass ihr das
+						Gesicht eines der Diebe entdeckt. Achtung, es gibt Fragmente von einem anderen Foto.
+					</h1>
+					<div class="grid-img">
+						<canvas id="found"></canvas>
+					</div>
+				</div>
+				<div class="grid-content">
+					<h1 class="grid-text">
+						Achtung, einer der Diebe rennt weg! Um ihn zu fangen, müssen Ana und Andreas von einem Wagen zum
+						anderen wechseln, aber die müssen identisch sein. Welche Wagen werden sie durchfahren?
+					</h1>
+					<img src="images/image - 019-removebg-preview.png" />
+				</div>
+			</div>
+		</section>
+		<section class="slide slide-10">
+			<div class="grid">
+				<div class="grid-content">
+					<h1 class="grid-text">Der Dieb schafft zu fliehen.</h1>
+					<img src="images/main-small.png" />
+				</div>
+				<div class="grid-content">
+					<h1 class="grid-text">Es ist Zeit für ein neues Abenteuer.</h1>
+					<img src="images/image - 020-removebg-preview.png" />
+				</div>
+			</div>
+		</section>
+		<section class="slide-11">
+			<h1 class="slide-11-title">
+				Findet ihr euch eine(n) Partner/in und schreibt die Geschichte weiter. Kriminalgeschichten kann man in
+				zwei groβe Gruppen untergliedern, in Detektivgeschichten und in Verbrechergeschichten. Wisst ihr,
+				wodurch sie sich unterscheiden?
+			</h1>
+			<div class="solve-grid">
+				<div class="solve-grid-content">
+					<div class="solve-grid-content-tile-container">
+						<h1 class="solve-grid-content-tile">Detektivgeschichten</h1>
+					</div>
+					<div class="drag-into-div drag"></div>
+					<div class="solve-grid-div">
+						<h1 class="solve-grid-content-tile">A</h1>
+					</div>
+				</div>
+				<div class="solve-grid-content">
+					<div class="solve-grid-content-tile-container">
+						<h1 class="solve-grid-content-tile">Verbrechergeschichten</h1>
+					</div>
+					<div class="drag-into-div drag"></div>
+					<div class="solve-grid-div">
+						<h1 class="solve-grid-content-tile">B</h1>
+					</div>
+				</div>
+			</div>
+			<div class="answers-container drag">
+				<div class="answer" draggable="true">
+					<h1 class="answer-text">Das Verbrechen ist bereits geschehen.</h1>
+				</div>
+				<div class="answer" draggable="true">
+					<h1 class="answer-text">
+						Das Verbrechen wird nicht immer aufgeklärt, denn es gehört zur Handlung der Geschichte.
+					</h1>
+				</div>
+				<div class="answer" draggable="true">
+					<h1 class="answer-text">Der Tathergang wird rekonstruirt.</h1>
+				</div>
+				<div class="answer" draggable="true">
+					<h1 class="answer-text">Nacheinander werden Einzelheiten aufgedeckt.</h1>
+				</div>
+				<div class="answer" draggable="true">
+					<h1 class="answer-text">Die Tat ist Bestandteil der Erzählung.</h1>
+				</div>
+				<div class="answer" draggable="true">
+					<h1 class="answer-text">
+						Intention ist die Anteilnahme des Lesers an der Planung und Durchführung der Tat.
+					</h1>
+				</div>
+				<div class="answer" draggable="true">
+					<h1 class="answer-text">
+						Die Spannung für den Leser besteht in der Art, wie der Fall gelöst wird.
+					</h1>
+				</div>
+
+				<div class="answer" draggable="true">
+					<h1 class="answer-text">Der Leser verfolgt meistens falsche Fährten.</h1>
+				</div>
+				<div class="answer" draggable="true">
+					<h1 class="answer-text">Der Verbrecher wird immer gefasst und die Tat immer bestraft</h1>
+				</div>
+				<div class="answer" draggable="true">
+					<h1 class="answer-text">Das Ende ist wie in den Märchen, der Böse wird immer bestraft.</h1>
+				</div>
+				<div class="answer" draggable="true">
+					<h1 class="answer-text">
+						Intentionen sind plötzliche Überraschungen und schrittweise Enthüllungen der Tat
+					</h1>
+				</div>
+				<div class="answer" draggable="true">
+					<h1 class="answer-text">
+						Intentionen sind plötzliche Überraschungen und schrittweise Enthüllungen der Tat
+					</h1>
+				</div>
+			</div>
+		</section>
+		<section class="slide-12">
+			<div class="download-btn-container">
+				<a class="download-button">Siehe Lösung</a>
+			</div>
+		</section>
+	</body>
+</html>
