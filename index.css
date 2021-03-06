@@ -99,7 +99,7 @@ nav {
 		U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 .main-screen {
-	background-image: url('images/main.jpg');
+	background-image: url('images/main.webp');
 	padding-bottom: 10rem;
 }
 .main-screen-title-container {
@@ -191,6 +191,7 @@ canvas {
 }
 .slide-12 {
 	padding-top: 8rem;
+	padding-bottom: 8rem;
 	background-color: #242837;
 }
 .slide-11-title {
