@@ -302,9 +302,12 @@ canvas {
 		font-size: 0.8rem;
 	}
 }
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 412px) {
 	canvas {
 		width: 360px;
+	}
+	.slide-11 {
+		display: none;
 	}
 }
 @media only screen and (max-width: 360px) {
