@@ -1,39 +1,65 @@
 const styleCanvas = (canvas, imageLocation, color = '#fff') => {
 	const ctx = canvas.getContext('2d');
 
-	//Resizing
-	let background = new Image();
-	background.src = imageLocation;
-	canvas.height = background.height;
-	canvas.width = background.width;
+	const background = new Image();
 
 	background.onload = function () {
+		//Resizing
+		canvas.height = background.height;
+		canvas.width = background.width;
 		ctx.drawImage(background, 0, 0);
 	};
+
+	background.src = imageLocation;
+
 	//variables
 	let painting = false;
 
-	function startPosition(e) {
+	function onDrawingStarted(e) {
 		painting = true;
-		draw(e);
-	}
-	function finishedPosition() {
-		painting = false;
+		const { x, y } = getCanvasCoordinates(e);
 		ctx.beginPath();
-	}
-	function draw(e) {
-		if (!painting) return;
-		ctx.lineWidth = 2;
-		ctx.lineCap = 'round';
-		ctx.lineTo(e.layerX, e.layerY);
-		ctx.strokeStyle = color;
-		ctx.stroke();
-		ctx.moveTo(e.layerX, e.layerY);
+		draw(x, y);
 	}
 
-	canvas.addEventListener('mousedown', startPosition);
-	window.addEventListener('mouseup', finishedPosition);
-	canvas.addEventListener('mousemove', draw);
+	function onDrawingFinished() {
+		painting = false;
+	}
+
+	function onDrawing(e) {
+		if (!painting) return;
+
+		const { x, y } = getCanvasCoordinates(e);
+		draw(x, y);
+	}
+
+	function getCanvasCoordinates(e) {
+		const bbox = e.target.getBoundingClientRect();
+		const x = e.clientX - bbox.left;
+		const y = e.clientY - bbox.top;
+
+		return { x, y };
+	}
+
+	function draw(x, y) {
+		ctx.lineWidth = 2;
+		ctx.lineCap = 'round';
+		ctx.lineTo(x, y);
+		ctx.strokeStyle = color;
+		ctx.stroke();
+		ctx.moveTo(x, y);
+	}
+
+	// replacement for mousedown and touchstart
+	canvas.addEventListener('pointerdown', onDrawingStarted);
+	// replacement for mouseup and touchend
+	window.addEventListener('pointerup', onDrawingFinished);
+	canvas.addEventListener('mousemove', onDrawing);
+
+	canvas.addEventListener('touchmove', e => {
+		e.preventDefault();
+		onDrawing(e.touches[0]);
+	});
 };
 
 window.addEventListener('load', () => {
@@ -69,8 +95,11 @@ window.addEventListener('load', () => {
 	styleCanvas(trains, './images/image--017.webp', '#000');
 	styleCanvas(found, './images/image--018.webp', '#000');
 });
+
 const draggables = document.querySelectorAll('.answer');
 const containers = document.querySelectorAll('.drag');
+
+const MAX_ANSWERS_PER_CONTAINER = 8;
 
 draggables.forEach(draggable => {
 	draggable.addEventListener('dragstart', () => {
@@ -79,22 +108,26 @@ draggables.forEach(draggable => {
 	draggable.addEventListener('dragend', () => {
 		draggable.classList.remove('dragging');
 	});
+	draggable.addEventListener('pointerup', () => {
+		draggable.classList.remove('dragging');
+
+		const targetContainer = containers[0].contains(draggable) ? containers[1] : containers[0];
+		if (targetContainer.childElementCount < MAX_ANSWERS_PER_CONTAINER) {
+			targetContainer.appendChild(draggable);
+		}
+	});
 });
+
 containers.forEach(container => {
 	container.addEventListener('dragover', e => {
-		if (container.classList.contains('drag-into-div')) {
-			if (container.childElementCount >= 6) {
-				return;
-			}
-		}
 		container.classList.add('drag-outline');
 		const draggable = document.querySelector('.dragging');
-		container.appendChild(draggable);
+
+		if (container.childElementCount < MAX_ANSWERS_PER_CONTAINER) {
+			container.appendChild(draggable);
+		}
 	});
 	container.addEventListener('dragleave', () => {
 		container.classList.remove('drag-outline');
 	});
 });
-const downloadBtn = document.querySelector('.download-button');
-downloadBtn.href = 'https://drive.google.com/u/0/uc?id=13nUhxM8xrkanlva9xfTpbisOD-pfvJzw&export=download';
-downloadBtn.download = 'answers';
