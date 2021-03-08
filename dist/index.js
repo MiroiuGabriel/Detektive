@@ -1,16 +1,23 @@
 const styleCanvas = (canvas, imageLocation, color = '#fff') => {
 	const ctx = canvas.getContext('2d');
 
-	const background = new Image();
+	let background = new Image();
 
 	background.onload = function () {
-		//Resizing
+		background.width = Math.min(background.width, screen.width - 10);
 		canvas.height = background.height;
 		canvas.width = background.width;
 		ctx.drawImage(background, 0, 0);
 	};
-
 	background.src = imageLocation;
+
+	const clearButton = document.createElement('button');
+	clearButton.classList.add('clear-btn');
+	clearButton.textContent = 'Klar';
+	clearButton.addEventListener('click', () => {
+		ctx.drawImage(background, 0, 0);
+	});
+	canvas.parentElement.parentElement.append(clearButton);
 
 	//variables
 	let painting = false;
